@@ -35,7 +35,16 @@ exports.editProfilPhoto = (request , response) => {
             const filename = user.picture.split('images/')[1];
             const target   = path.join(__dirname , '../images/' , filename);
             fs.unlink(target , (err , result) => {
-                
+                user.update(
+                    {
+                        picture : attachmentURL ,
+                    },
+                    {
+                        returning : true ,
+                        where :  {id : id}
+                }).then((result) => {
+                        return response.json({message : 'Photo modifiée avec succès'});
+                });
             });
             
         } else {
