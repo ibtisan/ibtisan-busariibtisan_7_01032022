@@ -34,7 +34,7 @@ export default {
 
 </script>
 <template>
-<header class="p-3 bg-dark text-white">
+<header class="p-3 background text-white">
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         <router-link to="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
@@ -58,6 +58,9 @@ export default {
 
 </template>
 <style>
+.background {
+  background-color: #fc947c;
+}
 .username {
   margin-right: 10px;
 }
